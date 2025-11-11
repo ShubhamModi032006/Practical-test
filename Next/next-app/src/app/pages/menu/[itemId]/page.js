@@ -1,11 +1,9 @@
 
 
-// Dynamic route - Item details page
-import { useRouter } from 'next/router';
-
-export default function ItemDetails() {
-  const router = useRouter();
-  const { itemId } = router.query;
+// Dynamic route - Item details page (App Router)
+// Use the `params` passed into the server component instead of `next/router`.
+export default function ItemDetails({ params }) {
+  const { itemId } = params || {};
 
   return (
     <div>
